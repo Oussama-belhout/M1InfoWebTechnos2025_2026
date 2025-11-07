@@ -10,11 +10,14 @@
 
 <body>
     <h1>Load a sound sample using fetch, decode it and play it using Web Audio</H1>
-    <p>The button below will be enabled when the sound is loaded. The download of the sound starts as soon as the page
-        is being loaded.</p>
-    <button id="playButton" disabled=true>Play sound</button>
+    <p>The buttons below appear once each sound sample is fetched and decoded. Feel free to trigger several at the
+        same time to explore how independent buffer sources behave.</p>
 
-    Try clicking rapidly on the button.
+    <section id="buttonsContainer" aria-live="polite">
+        <p id="loadingStatus">Loading drum kit samples…</p>
+    </section>
+
+    <p>Tip: click the same button repeatedly, the Web Audio API will instantiate a fresh source node every time.</p>
 </body>
 
 </html>

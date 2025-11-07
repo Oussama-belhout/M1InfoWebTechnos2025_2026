@@ -9,17 +9,31 @@
 </head>
 
 <body>
-    <h1>Load a sound sample using fetch, decode it and play it using Web Audio</H1>
-    <p>The button below will be enabled when the sound is loaded. The download of the sound starts as soon as the page
-        is being loaded.</p>
-    <button id="playButton" disabled=true>Play sound</button>
-<button id="debug">Debug</button>
-    Try clicking rapidly on the button.
-    <div class="wrapper">
-        <canvas id="myCanvas" width=600 height=100></canvas>
-        <canvas id="myCanvasOverlay" width=600 height=100></canvas>
-    </div>
-    
+    <h1>Waveform Playground – multi-sample edition</h1>
+    <p>Select any sample to load its waveform, then drag the trim bars to define the region you want to audition. Each
+        sound remembers its trim markers, so you can jump back and forth without losing your edits.</p>
+
+    <section aria-label="Sound selection">
+        <div id="buttonsContainer">
+            <p id="status" aria-live="polite">Loading sound palette…</p>
+        </div>
+    </section>
+
+    <section class="visualizer">
+        <div class="wrapper">
+            <canvas id="myCanvas" width="720" height="140"></canvas>
+            <canvas id="myCanvasOverlay" width="720" height="140"></canvas>
+        </div>
+        <div class="trim-readout">
+            <p><strong>Trim start:</strong> <span id="trimStart">0.00 s</span></p>
+            <p><strong>Trim end:</strong> <span id="trimEnd">0.00 s</span></p>
+        </div>
+    </section>
+
+    <p class="hint">Hint: Click multiple play buttons rapidly to layer transient-rich sounds. The Web Audio graph will
+        happily mix overlapping buffer sources.</p>
+
+    <button id="debug" type="button">Redraw waveform</button>
 </body>
 
 </html>

@@ -1,22 +1,35 @@
-.wrapper {
-    position: relative;
-    width: 400px;
-    height: 300px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2rem auto;
+    max-width: 720px;
+    line-height: 1.5;
+    color: #1f2933;
 }
 
-.wrapper canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-#myCanvas {
-  border: 1px solid black;
-  background-color:black;
-  z-index:0;
+#buttonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
 }
 
-#myCanvasOverlay {
-  border:1px solid red;
-  position: absolute;
-  z-index:10;
+.play-button {
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #2563eb;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.play-button:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.25);
+}
+
+.play-button:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.35);
+    outline-offset: 2px;
 }

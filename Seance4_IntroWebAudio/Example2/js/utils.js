@@ -13,4 +13,11 @@ function pixelToSeconds(x, bufferDuration, canvasWidth) {
     return result;
 }
 
-export { distance, pixelToSeconds };
+function secondsToPixels(seconds, bufferDuration, canvasWidth) {
+    if (bufferDuration === 0) {
+        return 0;
+    }
+    return (seconds / bufferDuration) * canvasWidth;
+}
+
+export { distance, pixelToSeconds, secondsToPixels };
